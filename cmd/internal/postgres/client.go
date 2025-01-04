@@ -24,9 +24,9 @@ type Client struct {
 func NewClient() (*Client, error) {
 	dbURI := &url.URL{
 		Scheme: "postgres",
-		User:   url.UserPassword("yudi", ""),
+		User:   url.UserPassword("postgres", "postgres"),
 		Host:   fmt.Sprintf("%s:%d", "localhost", 5432),
-		Path:   "hello_test",
+		Path:   "course-go",
 	}
 
 	leader, err := sql.Open("pgx", dbURI.String())

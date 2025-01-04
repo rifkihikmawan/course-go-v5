@@ -47,6 +47,10 @@ func (s *server) Start() {
 	// users
 	s.app.Post("/users", s.handleCreateUser)
 	s.app.Get("/users", s.handleGetUsers)
+	s.app.Get("/users/:id", s.handleGetUserById)
+	s.app.Post("/users/:id/activate", s.handleActivateUser)
+	s.app.Delete("/users/:id", s.handleDeleteUser)
+	s.app.Patch("/users/profile/:id", s.handleUpdateUserName)
 
 	s.app.Listen(":8080")
 }
